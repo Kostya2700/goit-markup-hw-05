@@ -43,14 +43,14 @@
         <!--Контакты-->
         <ul class="contacts">
           <li class="contacts-mail">
-            <a href="mailto:info@devstudio.com" class="link-mail dec">
+            <a href="mailto:info@devstudio.com" class="link-flex link-mail dec">
               <svg class="icon-contact" width="16" height="12">
                 <use href="./images/icon/sprite.svg#envelope"></use>
               </svg>
               info@devstudio.com</a>
           </li>
           <li class="contacts-tel">
-            <a href="tel:+380961111111" class="link-tel dec">
+            <a href="tel:+380961111111" class="link-flex link-tel dec">
               <svg class="icon-contact" width="10" height="16">
                 <use href="./images/icon/sprite.svg#smartphone"></use>
               </svg>
@@ -63,7 +63,17 @@
       <section class="home bc-home ">
         <div class="container">
           <h1 class="home-title">Эффективные решения для вашего бизнеса</h1>
-          <button class="btn-home" type="button">Заказать услугу</button>
+          <button class="btn-home" type="button" data-modal-open>Заказать услугу</button>
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal-windov">
+              <button class="modal-closed" data-modal-close>
+                <svg class="icon-btn" width="18" height="18">
+                  <use href="./images/icon/sprite.svg#closed"></use>
+                </svg>
+              </button>
+            
+            </div>
+          </div>
         </div>
       </section>
       <!--Особенности-->
@@ -132,6 +142,7 @@
                 width="370"
                 height="294"
               />
+              <p class="work-text">ДЕСКТОПНЫЕ ПРИЛОЖЕНИЯ</p>
             </li>
             <li class="item-work">
               <img
@@ -140,6 +151,7 @@
                 width="370"
                 height="294"
               />
+              <p class="work-text">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</p>
             </li>
             <li class="item-work">
               <img
@@ -148,6 +160,7 @@
                 width="370"
                 height="294"
               />
+              <p class="work-text">ДИЗАЙНЕРСКИЕ РЕШЕНИЯ</p>
             </li>
           </ul>
         </div>
@@ -403,5 +416,7 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
+    
   </body>
 </html>
