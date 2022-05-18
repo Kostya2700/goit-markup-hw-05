@@ -86,6 +86,7 @@ img {
   margin-right: 50px;
 }
 .link-navigation {
+  position: relative;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -93,11 +94,33 @@ img {
   color: var(--brand-color);
   padding: 32px 0;
 }
-.current {
+.active-page {
   color: var(--logo-cl);
 }
-.currents {
+.active-page::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--logo-cl);
+  border-radius: 2px;
 }
+.link-navigation::after:hover,
+.link-navigation::after:focus{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--logo-cl);
+  border-radius: 2px;
+}
+
 .link-navigation:hover,
 .link-navigation:focus {
   color: var(--logo-cl);
@@ -160,7 +183,7 @@ img {
   fill: var(--logo-cl);
 }
 
-/* Особливості*/
+/* Герой*/
 .home {
   background: var(--bc-footcl);
   padding: 200px 0;
@@ -211,6 +234,9 @@ img {
   color: var(--whiteF-cl);
   background: var(--btn-cl);
 }
+.icon-btn {
+  fill: var(--black-cl);
+}
 .specifics {
   padding-bottom: 0;
 }
@@ -224,6 +250,47 @@ img {
   height: 120px;
   margin-bottom: 30px;
 }
+/* Модальне вікно */
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.modal-windov {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  background-color: var(--white-cl);
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+}
+.modal-closed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+}
+/* Особливості */
 .list-specifics {
   display: flex;
   align-items: center;
@@ -255,52 +322,9 @@ img {
   letter-spacing: 0.03em;
   color: var(--grey-cl);
 }
-.icon-btn{
-  fill: var(--black-cl);
-}
 
-/* Модальне вікно */
-.backdrop {
- 
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.25);
-  z-index: 10;
-}
-.backdrop.is-hidden{
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-.modal-windov {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 528px;
-  height: 581px;
-  background-color: var(--white-cl);
-  border-radius: 4px;
-  transform: translate(-50%, -50%);
-  
-}
-.modal-closed {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 0;
-}
+
+
 /* Чим ми займаємось */
 .title-work {
   text-align: center;
@@ -315,12 +339,11 @@ img {
 .item-work {
   position: relative;
   margin-right: 30px;
-
 }
 .item-work:last-child {
   margin-right: 0;
 }
-.work-text{
+.work-text {
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -332,7 +355,9 @@ img {
   text-align: center;
   padding: 27px 82px;
   color: var(--whiteF-cl);
-  background-color: rgba(47, 48, 58, 0.8);;
+  background-color: rgba(47, 48, 58, 0.8);
+  letter-spacing: 0.03em;
+/* text-transform: uppercase; */
 }
 /*Наша команда*/
 .team {
