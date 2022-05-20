@@ -19,7 +19,9 @@
   --border-project: #eeeeee;
   --border-header: #ececec;
   --clientc: #afb1b8;
+  --bc-prtf:rgba(33, 150, 243, 0.9);
   --card-prf: 30px;
+  --time-hover: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: var(--roboto-font);
@@ -93,6 +95,9 @@ img {
   letter-spacing: 0.02em;
   color: var(--brand-color);
   padding: 32px 0;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .active-page {
   color: var(--logo-cl);
@@ -109,7 +114,7 @@ img {
   border-radius: 2px;
 }
 .link-navigation::after:hover,
-.link-navigation::after:focus{
+.link-navigation::after:focus {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -154,6 +159,9 @@ img {
   letter-spacing: 0.02em;
   color: var(--grey-cl);
   padding: 32px 0;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-mail:hover,
 .link-mail:focus {
@@ -173,6 +181,10 @@ img {
   letter-spacing: 0.02em;
   color: var(--grey-cl);
   padding: 32px 0;
+  /* transition: color var(--time-hover); */
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-tel:hover,
 .link-tel:focus {
@@ -229,6 +241,9 @@ img {
   margin-right: auto;
   padding: 10px 32px;
   border: none;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-home:hover {
   color: var(--whiteF-cl);
@@ -323,8 +338,6 @@ img {
   color: var(--grey-cl);
 }
 
-
-
 /* Чим ми займаємось */
 .title-work {
   text-align: center;
@@ -357,7 +370,7 @@ img {
   color: var(--whiteF-cl);
   background-color: rgba(47, 48, 58, 0.8);
   letter-spacing: 0.03em;
-/* text-transform: uppercase; */
+  /* text-transform: uppercase; */
 }
 /*Наша команда*/
 .team {
@@ -423,6 +436,9 @@ img {
   height: 44px;
   background-color: var(--white-cl);
   border-radius: 50%;
+  transition-property: color background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
@@ -455,6 +471,9 @@ img {
   align-items: center;
   border: 1px solid var(--clientc);
   border-radius: 4px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-client:not(:last-child) {
   margin-right: 30px;
@@ -467,6 +486,9 @@ img {
 .item-client:hover .icon-client,
 .item-client:focus .icon-client {
   fill: var(--logo-cl);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Підвал*/
@@ -507,6 +529,9 @@ padding-bottom: 60px; */
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--grey-cl);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mail-footer:hover,
 .mail-footer:focus {
@@ -546,6 +571,9 @@ padding-bottom: 60px; */
   align-items: center;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .join-item:not(:last-child) {
   margin-right: 10px;
@@ -594,6 +622,9 @@ padding-bottom: 60px; */
   background: var(--btnbc);
   padding: 6px 22px;
   box-shadow: 0px 4px 4px var(--border-team);
+  transition-property: background-color color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-btn {
   margin-right: 8px;
@@ -641,6 +672,53 @@ margin-bottom: 0;
   letter-spacing: 0.03em;
   color: var(--grey-cl);
 }
+.project {
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project:hover,
+.project:focus {
+  cursor: pointer;
+  box-shadow: 0 4px 4px var(--border-team);
+}
+.card-thumb {
+  /* outline: 1px solid red; */
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bc-prtf) ;
+  /* z-index: 100; */
+  /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.text-overlay {
+  /* padding: 63px 24px 63px 24px; */
+  padding-top: 63px;
+  padding-left: 24px;
+  padding-bottom: 63px;
+  padding-right: 24px;
+  text-align: left;
+  font-family: var(--roboto-font);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--whiteF-cl);
+}
+.project:hover .overlay,
+.project:focus .overlay  {
+  transform: translateY(0);
+}
+
 /* Декорація */
 .list-navigation,
 .contacts,
@@ -661,12 +739,4 @@ margin-bottom: 0;
 .dec {
   text-decoration: none;
   /* padding: 32px 0; */
-}
-.card-thumb {
-  /* outline: 1px solid red; */
-}
-.project:hover,
-.project:focus {
-  cursor: pointer;
-  box-shadow: 0 4px 4px var(--border-team);
 }
